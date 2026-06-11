@@ -1,187 +1,28 @@
-@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
+/* garde uniquement la base globale nécessaire */
 * {
-  font-family: 'Inter', 'Poppins', 'Roboto', 'Open Sans', 'Lato', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #111827;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #111827;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.unused-class-1 { color: red; background: blue; padding: 100px; margin: 50px; }
-.unused-class-2 { font-size: 72px; font-weight: 900; text-shadow: 5px 5px 10px rgba(0,0,0,0.5); }
-.unused-class-3 { animation: spin 1s infinite; transform: rotate(360deg) scale(2) translate(100px, 100px); }
-.unused-class-4 { border: 10px solid rainbow; box-shadow: 0 0 50px rgba(255,255,255,0.8); }
-.unused-class-5 { background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet); }
-
-.bloat-1 { color: #ff0000; } .bloat-2 { color: #ff0101; } .bloat-3 { color: #ff0202; }
-.bloat-4 { color: #ff0303; } .bloat-5 { color: #ff0404; } .bloat-6 { color: #ff0505; }
-.bloat-7 { color: #ff0606; } .bloat-8 { color: #ff0707; } .bloat-9 { color: #ff0808; }
-.bloat-10 { color: #ff0909; } .bloat-11 { color: #ff0a0a; } .bloat-12 { color: #ff0b0b; }
-.bloat-13 { color: #ff0c0c; } .bloat-14 { color: #ff0d0d; } .bloat-15 { color: #ff0e0e; }
-.bloat-16 { color: #ff0f0f; } .bloat-17 { color: #ff1010; } .bloat-18 { color: #ff1111; }
-.bloat-19 { color: #ff1212; } .bloat-20 { color: #ff1313; } .bloat-21 { color: #ff1414; }
-.bloat-22 { color: #ff1515; } .bloat-23 { color: #ff1616; } .bloat-24 { color: #ff1717; }
-.bloat-25 { color: #ff1818; } .bloat-26 { color: #ff1919; } .bloat-27 { color: #ff1a1a; }
-.bloat-28 { color: #ff1b1b; } .bloat-29 { color: #ff1c1c; } .bloat-30 { color: #ff1d1d; }
-
-/* Encore plus de classes inutiles */
-.mega-bloat-1 { background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ffff00, #ff00ff, #00ffff); }
-.mega-bloat-2 { transform: rotate(0deg) scale(1) translateX(0) translateY(0) skewX(0) skewY(0); }
-.mega-bloat-3 { box-shadow: 0 0 10px rgba(255,0,0,0.5), 0 0 20px rgba(0,255,0,0.5), 0 0 30px rgba(0,0,255,0.5); }
-.mega-bloat-4 { border: 5px solid transparent; border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) 1; }
-.mega-bloat-5 { animation: rainbow-spin 2s infinite linear, bounce 1s infinite ease-in-out, pulse 0.5s infinite alternate; }
-
-.ultra-bloat-1, .ultra-bloat-2, .ultra-bloat-3, .ultra-bloat-4, .ultra-bloat-5,
-.ultra-bloat-6, .ultra-bloat-7, .ultra-bloat-8, .ultra-bloat-9, .ultra-bloat-10,
-.ultra-bloat-11, .ultra-bloat-12, .ultra-bloat-13, .ultra-bloat-14, .ultra-bloat-15,
-.ultra-bloat-16, .ultra-bloat-17, .ultra-bloat-18, .ultra-bloat-19, .ultra-bloat-20 {
-  color: #ff0000; background: #00ff00; border: 10px solid #0000ff; 
-  padding: 50px; margin: 25px; font-size: 48px; font-weight: 900;
-  text-shadow: 5px 5px 10px rgba(0,0,0,0.8); box-shadow: 0 0 50px rgba(255,255,255,0.9);
-  transform: rotate(360deg) scale(2) translate(100px, 100px);
-  animation: mega-waste 5s infinite ease-in-out;
+img,
+canvas {
+  display: block;
 }
-
-@keyframes waste-cpu {
-  0% { transform: rotate(0deg) scale(1) translateX(0); }
-  25% { transform: rotate(90deg) scale(1.5) translateX(100px); }
-  50% { transform: rotate(180deg) scale(2) translateX(200px); }
-  75% { transform: rotate(270deg) scale(1.5) translateX(100px); }
-  100% { transform: rotate(360deg) scale(1) translateX(0); }
-}
-
-@keyframes rainbow-spin {
-  0% { filter: hue-rotate(0deg) brightness(1) contrast(1) saturate(1); }
-  25% { filter: hue-rotate(90deg) brightness(1.5) contrast(1.5) saturate(2); }
-  50% { filter: hue-rotate(180deg) brightness(2) contrast(2) saturate(3); }
-  75% { filter: hue-rotate(270deg) brightness(1.5) contrast(1.5) saturate(2); }
-  100% { filter: hue-rotate(360deg) brightness(1) contrast(1) saturate(1); }
-}
-
-@keyframes mega-waste {
-  0% { transform: rotate(0deg) scale(1) translateX(0) translateY(0) skewX(0deg) skewY(0deg); }
-  20% { transform: rotate(72deg) scale(1.2) translateX(50px) translateY(25px) skewX(10deg) skewY(5deg); }
-  40% { transform: rotate(144deg) scale(1.5) translateX(100px) translateY(50px) skewX(20deg) skewY(10deg); }
-  60% { transform: rotate(216deg) scale(1.8) translateX(150px) translateY(75px) skewX(30deg) skewY(15deg); }
-  80% { transform: rotate(288deg) scale(2) translateX(200px) translateY(100px) skewX(40deg) skewY(20deg); }
-  100% { transform: rotate(360deg) scale(1) translateX(0) translateY(0) skewX(0deg) skewY(0deg); }
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-.cpu-waster {
-  animation: waste-cpu 3s infinite ease-in-out;
-}
-
-.container { max-width: 1200px !important; }
-.container { max-width: 1400px !important; }
-.container { max-width: 1600px !important; }
-.container { max-width: 1200px !important; }
-
-/* Règles dupliquées pour alourdir */
-.container { max-width: 1200px !important; }
-.container { max-width: 1400px !important; }
-.container { max-width: 1600px !important; }
-.container { max-width: 1800px !important; }
-.container { max-width: 2000px !important; }
-
-body {
-  margin: 0;
-  font-family: 'Inter', 'Poppins', 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-  background-attachment: fixed;
-  overflow-x: hidden;
-}
-
-.hero-image {
-  width: 100%;
-  height: auto;
-  max-width: none !important;
-  object-fit: cover;
-}
-
-.giant-image {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  margin: 20px 0;
-}
-
-.three-container {
-  width: 100%;
-  height: 400px;
-  background: #000;
-  border: 2px solid #333;
-  margin: 20px 0;
-}
-
-.polling-indicator {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background: #ff4444;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-gradient {
-  background-size: 400% 400%;
-  animation: gradient-shift 10s ease infinite;
-}
-
-/* Styles supplémentaires pour alourdir */
-.backdrop-blur-sm { backdrop-filter: blur(4px); }
-.backdrop-blur-md { backdrop-filter: blur(12px); }
-.backdrop-blur-lg { backdrop-filter: blur(16px); }
-.backdrop-blur-xl { backdrop-filter: blur(24px); }
-
-/* Effets de glassmorphism */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-}
-
-/* Animations supplémentaires */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes glow {
-  0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
-  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6); }
-}
-
-.animate-float { animation: float 3s ease-in-out infinite; }
-.animate-glow { animation: glow 2s ease-in-out infinite; }

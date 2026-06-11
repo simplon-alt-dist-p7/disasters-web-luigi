@@ -45,9 +45,11 @@ app.use(
     res.set('Cross-Origin-Embedder-Policy', 'require-corp')
     next()
   },
+  // met en cache les fichiers statiques restants
   express.static(path.join(__dirname, 'static'), {
-    extensions: ['js', 'css', 'jpg'],
-    maxAge: 0
+    extensions: ['js', 'css'],
+    maxAge: '7d',
+    immutable: true
   })
 )
 
